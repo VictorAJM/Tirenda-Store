@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Tirenda</title>
+</head>
+<body>
+    <div id = "main">
+        <!--
+            Navbar con Inicio, Acerca de, Carrito,API loca
+        -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="pages/about.html">Acerca de</a>
+                <a class="nav-item nav-link" href="#">Carrito</a>
+                <a class="nav-item nav-link" href="#">APIloca</a>
+              </div>
+            </div>
+          </nav>
+        <!-- Agregar padding y marco y esas madres al carrusel -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner" id="MyCarouselInner">
+
+
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+
+        
+    </div>  
+    <script type="module" src="assets/js/index.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#myCarousel').carousel({
+            interval:200
+        });
+    });
+    </script>
+
+</body>
+</html>
