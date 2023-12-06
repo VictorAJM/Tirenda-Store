@@ -1,2 +1,2 @@
 # Tirenda-Store
-Tirenda is a company that specializes in the sale of tires and accessories for automobiles. Its mission is to offer quality products, competitive prices and exceptional customer service.
+Bienvenido a Tirenda, tu tienda en línea de confianza para explorar y adquirir los videojuegos más emocionantes del momento. En Tirenda, nos apasiona la industria de los videojuegos y nos esforzamos por brindar a nuestros clientes una experiencia de compra excepcional.
