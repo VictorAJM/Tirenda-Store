@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito</title>
+  <!-- Enlace al archivo CSS de Bootstrap (puedes usar el CDN o descargar el archivo) -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
+</head>
+<body>
+  <div id = "main">
+    <!--
+        Navbar con Inicio, Acerca de, Carrito,API loca
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Carrito <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="about.html">Acerca de</a>
+            <a class="nav-item nav-link" href="../index.html">Inicio</a>
+            <a class="nav-item nav-link" href="#">APIloca</a>
+          </div>
+        </div>
+      </nav>
+  <div class="container">
+    <h2>Divs Presionados:</h2>
+    <ul id="divsPresionadosList"></ul>
+  </div>
+
+  <script>
+    var divsPresionados = JSON.parse(localStorage.getItem('divsPresionados')) || [];
+    var divsPresionadosList = document.getElementById('divsPresionadosList');
+
+    divsPresionados.forEach(function (divId) {
+      var listItem = document.createElement('li');
+      listItem.textContent = divId;
+      listItem.className = 'alert alert-warning'; // Clase Bootstrap para dar estilo
+      divsPresionadosList.appendChild(listItem);
+    });
+  </script>
+
+</body>
+</html>

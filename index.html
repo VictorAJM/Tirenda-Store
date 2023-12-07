@@ -8,6 +8,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Tirenda</title>
+    <style>
+        .clickable-div {
+          cursor: pointer;
+          padding: 20px;
+          margin: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        #final {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      bottom: 0;
+      width: 100%;
+    }
+
+      </style>
 </head>
 <body>
     <div id = "main">
@@ -22,7 +40,7 @@
               <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only"></span></a>
                 <a class="nav-item nav-link" href="pages/about.html">Acerca de</a>
-                <a class="nav-item nav-link" href="#">Carrito</a>
+                <a class="nav-item nav-link" href="pages/carrito.html">Carrito</a>
                 <a class="nav-item nav-link" href="#">APIloca</a>
               </div>
             </div>
@@ -43,9 +61,37 @@
                 <span class="sr-only">Siguiente</span>
             </a>
         </div>
-
+        <div class="container">
+            <h2>Haz clic en los Divs</h2>
         
+            <div class="clickable-div alert alert-primary" id="div1" onclick="guardarDivPresionado('div1')">Div 1</div>
+            <div class="clickable-div alert alert-success" id="div2" onclick="guardarDivPresionado('div2')">Div 2</div>
+            <div class="clickable-div alert alert-info" id="div3" onclick="guardarDivPresionado('div3')">Div 3</div>
+    
+        </div>
+
+      
+           
+          
     </div>  
+
+    <p id="final">© 2023. Victor Jaramillo. Todos los derechos reservados.</p>
+      <script>
+        function guardarDivPresionado(divId) {
+          var divsPresionados = JSON.parse(localStorage.getItem('divsPresionados')) || [];
+    
+          if (!divsPresionados.includes(divId)) {
+            divsPresionados.push(divId);
+            localStorage.setItem('divsPresionados', JSON.stringify(divsPresionados));
+          } else {
+            var index = divsPresionados.indexOf(divId);
+            if (index !== -1) {
+                divsPresionados.splice(index, 1);
+            }
+            localStorage.setItem('divsPresionados', JSON.stringify(divsPresionados));
+          }
+        }
+      </script>
     <script type="module" src="assets/js/index.js"></script>
     <script>
     $(document).ready(function(){
