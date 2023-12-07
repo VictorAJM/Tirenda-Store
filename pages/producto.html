@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+       table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .product-container {
+        max-width: 80%;
+        margin: 50px auto; /* Auto para centrar horizontalmente */
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
+        border: 2px solid #333; /* Borde gris oscuro */
+        position: relative; /* Establece un contexto de posición para elementos hijos posicionados absolutamente */
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px 8px 0 0; /* Esquinas redondas solo en la parte superior */
+      margin-bottom: 15px;
+    }
+
+    .product-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .product-rating {
+      color: red;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .savings {
+      color: #4CAF50;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="tabla"></div>
+  </div>
+  <script type="module" src="../assets/js/producto.js"></script>
+</body>
+</html>

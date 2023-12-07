@@ -103,7 +103,7 @@ const productos_generales_api_call = async () => {
     const APIResponse = await fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1')
     
     const deals = await APIResponse.json()
-    for (let i=0;i<6;i++) {
+    for (let i=0;i<60;i++) {
     
       let price = deals[i].salePrice
       let title = deals[i].title
@@ -132,11 +132,11 @@ const productos_generales_api_call = async () => {
 
       container.appendChild(imgElement)
       container.appendChild(titleDiv)
-      container.appendChild(priceDiv)
       container.appendChild(ratingDiv)
-      container.appendChild(savingDiv)
       container.addEventListener('click',function() {
+        localStorage.setItem('producto',container.dataset.number)
         console.log(container.dataset.number)
+        window.location.href = '../../pages/producto.html'
       })
       Productos.append(container)
     }
