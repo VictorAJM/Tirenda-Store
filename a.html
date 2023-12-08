@@ -3,98 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Búsqueda</title>
+    <title>User Information</title>
     <style>
-        /* Estilo para centrar el formulario */
         body {
+            font-family: Arial, sans-serif;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
         }
 
-        /* Estilo para cada grupo */
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+        #userContainer {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilo para separar las etiquetas y campos */
-        .form-group label {
+        #profilePicture {
+            border-radius: 50%;
+            max-width: 100px;
+            max-height: 100px;
             margin-bottom: 10px;
         }
-
-        /* Estilo para el input */
-        .form-input {
-            padding: 15px; /* Espaciado interno */
-            font-size: 18px; /* Tamaño del texto */
-            border: 1px solid #ccc; /* Borde */
-            border-radius: 8px; /* Bordes redondeados */
-            box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total */
-            width: 100%; /* Ocupa el ancho completo del contenedor */
-            margin-top: 5px; /* Espaciado superior */
-            margin-bottom: 5px; /* Espaciado inferior */
-            text-align: center; /* Centra el texto horizontalmente */
-        }
-
-        /* Estilo para el botón */
-        .submit-button {
-            background-color: #4CAF50; /* Color de fondo */
-            color: white; /* Color del texto */
-            padding: 15px 20px; /* Espaciado interno */
-            font-size: 18px; /* Tamaño del texto */
-            border: none; /* Sin borde */
-            border-radius: 8px; /* Bordes redondeados */
-            cursor: pointer; /* Cambia el cursor al pasar por encima */
-        }
-
-        /* Cambia el color del botón al pasar el ratón */
-        .submit-button:hover {
-            background-color: #45a049;
-        }
     </style>
-    <script>
-        function validarFormulario() {
-            // ... (la lógica de validación permanece sin cambios)
-        }
-    </script>
 </head>
 <body>
 
-  
-
-    <form onsubmit="return validarFormulario()">
-        <!-- Campo StoreID -->
-        <div class="form-group">
-            <label for="storeID">StoreID:</label>
-            <input type="text" id="storeID" name="storeID" class="form-input">
-        </div>
-
-        <!-- Campo Precio Mínimo -->
-        <div class="form-group">
-            <label for="precioMinimo">Precio Mínimo:</label>
-            <input type="text" id="precioMinimo" name="precioMinimo" class="form-input">
-        </div>
-
-        <!-- Campo Precio Máximo -->
-        <div class="form-group">
-            <label for="precioMaximo">Precio Máximo:</label>
-            <input type="text" id="precioMaximo" name="precioMaximo" class="form-input">
-        </div>
-
-        <!-- Campo Título -->
-        <div class="form-group">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" class="form-input">
-        </div>
-        
-        <!-- Estilo aplicado al botón -->
-        <input type="submit" class="submit-button" value="Buscar">
-    </form>
+    <div id="userContainer">
+        <img id="profilePicture" src="user-profile-picture.jpg" alt="Profile Picture">
+        <h2>User Name</h2>
+        <p>Email: user@example.com</p>
+        <!-- Add more information as needed -->
+    </div>
 
 </body>
 </html>
