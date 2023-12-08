@@ -1,72 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Producto en Venta</title>
+  <script  src="../assets/js/producto.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
   <style>
-       table {
-      border-collapse: collapse;
-      width: 50%;
-      margin: 20px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     .product-container {
-        max-width: 80%;
-        margin: 50px auto; /* Auto para centrar horizontalmente */
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
-        border: 2px solid #333; /* Borde gris oscuro */
-        position: relative; /* Establece un contexto de posición para elementos hijos posicionados absolutamente */
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .product-image {
       width: 100%;
-      height: auto;
-      border-radius: 8px 8px 0 0; /* Esquinas redondas solo en la parte superior */
-      margin-bottom: 15px;
+      max-height: 200px;
+      object-fit: cover;
     }
 
-    .product-name {
-      font-size: 20px;
-      font-weight: bold;
+    .product-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .product-title {
+      font-size: 1.5em;
       margin-bottom: 10px;
     }
 
     .product-price {
-      font-size: 18px;
-      color: #333;
+      font-size: 1.2em;
+      color: #4CAF50; /* verde para el precio */
       margin-bottom: 10px;
     }
 
-    .product-rating {
-      color: red;
-      font-size: 16px;
+    .product-savings {
+      color: #FF5722; /* naranja para el porcentaje de ahorro */
       margin-bottom: 10px;
     }
 
-    .savings {
-      color: #4CAF50;
-      font-size: 16px;
+    .add-to-cart {
+      display: inline-block;
+      width: 50%;
+      padding: 15px;
+      background-color: #4CAF50; /* verde para el fondo del botón */
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.2em;
+      border: 2px solid #45a049; /* borde verde oscuro */
+      border-radius: 5px; /* esquinas redondeadas */
+      transition: background-color 0.3s; /* transición suave en el cambio de color de fondo */
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background-color: #45a049; /* cambio de color al pasar el ratón sobre el botón */
+    }
+
+    .comparison-table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center; /* Centra el texto en todas las celdas */
+    }
+
+    .comparison-table th {
+      background-color: #4CAF50; /* verde para las celdas de encabezado */
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div id="main">
-    <div id="tabla"></div>
-  </div>
-  <script type="module" src="../assets/js/producto.js"></script>
+    <!--
+        Navbar con Inicio, Acerca de, Carrito,API loca
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link " href="carrito.html">Carrito <span class="sr-only"></span></a>
+          <a class="nav-item nav-link" href="about.html">Acerca de</a>
+          <a class="nav-item nav-link" href="../index.html">Inicio</a>
+          <a class="nav-item nav-link" href="#">APIloca</a>
+        </div>
+      </div>
+    </nav>  
+  <div class="product-container">
+    <img src="imagen_producto.jpg" alt="Producto a la venta" class="product-image" id="img">
+    <div class="product-info">
+      <div class="product-title" id="titulo">Nombre del Producto</div>
+      <div class="product-price" id="precio">$99.99</div>
+      <div class="product-savings" id="ahorro"></div>
+      <button onclick="mostrarAlerta()" class="add-to-cart" id="boton">Agregar al Carrito</button>
+
+    </div>
+    <div id="main">
+      <div id="tabla"></div>
+    </div>
+    
+
 </body>
 </html>
