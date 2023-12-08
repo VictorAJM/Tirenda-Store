@@ -9,7 +9,7 @@ function generateRandomString(length) {
 }
 let retardo = 100
 function generateRandomMD5Hash() {
-  const randomString = generateRandomString(32); // 32 characters for a 128-bit hash
+  const randomString = generateRandomString(32); 
   const md5Hash = md5(randomString);
   return md5Hash;
 }
@@ -20,16 +20,15 @@ console.log(randomMD5Hash);
       var apiurl =  'https://codeforces.com/api/user.info?handles=Chaska'
       fetch(apiurl).then((response)=> response.json()).then((userInformation)=> {
         
-        // Create a div to display user information
-        var userContainer = document.createElement("div");
-        userContainer.id = "userContainer"; // Add id to the div
 
-        // Create an image element for the profile picture
+        var userContainer = document.createElement("div");
+        userContainer.id = "userContainer";
+
         var profilePicture = document.createElement("img");
-        profilePicture.id = "profilePicture"; // Add id to the image
+        profilePicture.id = "profilePicture";
         profilePicture.alt = "Profile Picture";
         
-        // Append the profile picture to the user container
+
         userContainer.appendChild(profilePicture);
         profilePicture.src = userInformation.result[0].titlePhoto
         let p = document.createElement("p")
@@ -48,7 +47,7 @@ console.log(randomMD5Hash);
         let s3 = document.createElement("b")
         s3.textContent = "organization:"
         p3.textContent = userInformation.result[0].organization
-        // Append the user container to the body
+ 
         document.body.appendChild(userContainer);
         document.body.appendChild(s);
         document.body.appendChild(p);
@@ -139,4 +138,4 @@ console.log(randomMD5Hash);
     // Generar una nueva imagen cada 2 segundos
     setInterval(obtenerImagenDeRobot, 500);
 
-    setInterval(obtenerRating,5000)
+    setInterval(obtenerRating,2000)
