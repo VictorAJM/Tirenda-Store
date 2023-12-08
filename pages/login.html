@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace al archivo CSS de Bootstrap (puedes usar el CDN o descargar el archivo) -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <script  src="../assets/js/login.js" defer></script>
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+    #main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    } 
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    #enviar {
+      background-color: #4caf50;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #enviar:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  
+    <!--
+        Navbar con Inicio, Acerca de, Carrito,API loca
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Carrito <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="about.html">Acerca de</a>
+            <a class="nav-item nav-link" href="../index.html">Inicio</a>
+            <a class="nav-item nav-link" href="#">APIloca</a>
+          </div>
+        </div>
+      </nav>
+      <div id="main">
+      
+        <form onsubmit="return validarFormulario()">
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" required>
+  
+          <br>
+  
+          <label for="contrasena">Contraseña:</label>
+          <input type="password" id="contrasena" name="contrasena" required>
+  
+          <br>
+  
+          <!-- Cambiado a type="submit" para permitir el envío del formulario -->
+          <input type="submit" value="Iniciar sesión" id="enviar">
+      </form>
+    </div>
+
+</body>
+</html>

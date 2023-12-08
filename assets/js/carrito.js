@@ -36,14 +36,14 @@ const api_call = async() => {
 
 
 const crear = async() => {
-  
-  let arr = JSON.parse(localStorage.getItem('carrito'))
-for (let i of arr) {
-  numero = parseInt(i)
-  await api_call()
-}
-var divTabla = document.getElementById("tabla")
-divTabla.innerHTML = crearTabla()
+
+            let arr = JSON.parse(localStorage.getItem('carrito'))
+          for (let i of arr) {
+            numero = parseInt(i)
+            await api_call()
+          }
+          var divTabla = document.getElementById("tabla")
+          divTabla.innerHTML = crearTabla()
 
 
           // Calcula el total sumando los precios de los productos
@@ -55,6 +55,7 @@ divTabla.innerHTML = crearTabla()
     
           // Muestra el total en el contenedor
           document.getElementById('total-container').textContent = 'Total: $' + total.toFixed(2);
+
 }
 
 
@@ -64,4 +65,5 @@ function comprar() {
   alert('Gracias por su compra :D')
   window.location.href = '../index.html'
   localStorage.removeItem('carrito')
+  
 }
