@@ -98,11 +98,17 @@ const carousel_api_call = async () => {
   CarouselItem.appendChild(textoAbajo)
   Carrusel.appendChild(CarouselItem)
 }
-
+let contexto="storeID=1"
 const productos_generales_api_call = async () => {
-    const APIResponse = await fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1')
+    const APIResponse = await fetch('https://www.cheapshark.com/api/1.0/deals?'+contexto)
     
     const deals = await APIResponse.json()
+    console.log("#")
+
+    // Elimina todos los divs hijos
+    while (Productos.firstChild) {
+      Productos.removeChild(Productos.firstChild);
+    }
     for (let i=0;i<60;i++) {
     
       let price = deals[i].salePrice
@@ -144,3 +150,37 @@ const productos_generales_api_call = async () => {
 carousel_api_call()
 
 productos_generales_api_call() 
+
+
+function validarFormulario() {
+  // ... (la lógica de validación permanece sin cambios)
+  var storeID = document.getElementById("storeID").value;
+var precioMinimo = document.getElementById("precioMinimo").value;
+var precioMaximo = document.getElementById("precioMaximo").value;
+var titulo = document.getElementById("titulo").value;
+
+// Validar que los campos requeridos no estén vacíos
+if (storeID === "" || precioMinimo === "" || precioMaximo === "" || titulo === "") {
+  alert("Todos los campos son obligatorios.");
+  return false;
+}
+
+// Validar que los campos de categoría, storeID y rango de precios sean números enteros
+if ( !Number.isInteger(parseInt(storeID)) || !Number.isInteger(parseInt(precioMinimo)) || !Number.isInteger(parseInt(precioMaximo))) {
+  alert("Las categorías, storeID y precios deben ser números enteros.");
+  return false;
+}
+console.log("*")
+// Resto de la lógica de validación aquí...
+contexto = "storeID="+storeID+"&lowerPrice="+precioMinimo+"&upperPrice="+precioMaximo+"&title="+titulo
+productos_generales_api_call()
+// Enviar el formulario si todo es válido
+alert("Formulario válido. Puedes enviarlo.");
+return true;
+}
+
+// Event listener para el formulario
+document.getElementById("formulario").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita el envío del formulario por defecto
+  validarFormulario();
+});
